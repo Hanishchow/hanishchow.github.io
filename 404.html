@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>no signal — chow.dev</title>
+<meta name="description" content="That page is not here." />
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fff'/%3E%3Ctext x='16' y='23' font-family='Helvetica,Arial' font-size='20' font-style='italic' text-anchor='middle' fill='%23000'%3Ec%3C/text%3E%3C/svg%3E" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/404.css" />
+</head>
+<body class="is-lit lost">
+
+<div class="backdrop" aria-hidden="true"></div>
+
+<div class="ctl">
+  <div class="switch">
+    <input type="checkbox" id="invertToggle" aria-label="Invert the page" />
+    <label for="invertToggle"><i></i></label>
+  </div>
+</div>
+
+<main>
+<!-- ============ NO SIGNAL ============
+     The site's own vocabulary, nothing invented for this page: the dead
+     channel the console shows before it has tuned in, the counter that
+     numbers the works, and the tracking overlay's report line. -->
+<section class="sec sec--dark lost__sec" id="lost">
+  <div class="stage">
+    <img src="assets/el/star-b.png" alt="" class="el el--star-b" aria-hidden="true" />
+    <!-- inside the stage, and above the cut-out: the star is dark artwork on an
+         opaque rectangle and needs the stage's paper behind it to blend against,
+         so the snow cannot sit underneath. It goes between the cut-out and the
+         type, on the same layer the tracking overlay uses. -->
+    <canvas id="snowCanvas" aria-hidden="true"></canvas>
+    <h1 class="lay lay--lost">no</h1>
+    <p class="lay lay--lost2" aria-hidden="true">signal.</p>
+    <p class="lay lay--lostmeta">
+      <b>404</b><i>the page you asked for is not on this tape</i>
+    </p>
+    <a class="lay lay--lostback" href="/">↩ back to the top</a>
+  </div>
+</section>
+</main>
+
+<script src="js/contours.js"></script>
+<script src="js/main.js"></script>
+<script src="js/track.js"></script>
+<script src="js/snow.js"></script>
+</body>
+</html>

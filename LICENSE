@@ -1,0 +1,41 @@
+Copyright (c) 2026 Hanish Chowdary. All rights reserved.
+
+CONTENT
+-------
+All original content in this repository — the written copy, the photography,
+the video, and the project descriptions — is the property of Hanish Chowdary
+and may not be reproduced or redistributed without permission.
+
+NO OPEN-SOURCE GRANT
+--------------------
+This repository is published for viewing, not for reuse. No permission is
+granted to copy, modify or redistribute the source. A permissive licence is
+deliberately NOT offered here: the interaction design and page architecture
+originate from a third-party portfolio that carries no licence of its own, and
+this project is therefore not in a position to grant rights over that work to
+anyone else.
+
+THIRD-PARTY COMPONENTS
+----------------------
+three.js .......... MIT, loaded from a CDN, not vendored here.
+Invert switch ..... Structure and mechanism from Uiverse.io by elijahgummer,
+                    MIT. Attribution retained in css/style.css as the licence
+                    requires. Restyled; the mechanism is theirs.
+Star control ...... Function derived from the Uiverse.io "Star on GitHub"
+                    button by elijahgummer, MIT. Rebuilt in plain CSS.
+                    Attribution retained in css/style.css.
+Console model ..... assets/models/psp.glb — third-party model obtained via
+                    Sketchfab. Subject to its original author's terms; textures
+                    downscaled, geometry unmodified.
+Dice model ........ assets/models/dice.glb — third-party model obtained via
+                    Sketchfab. Subject to its original author's terms; textures
+                    stripped and materials replaced.
+VCR font .......... freely licensed.
+GitHub / LinkedIn / Instagram marks are trademarks of their respective owners
+and are used here solely to link to the corresponding profiles.
+
+OUTSTANDING
+-----------
+assets/fonts/Helvetica* are licensed commercial fonts and are pending
+replacement with a metric-compatible free face.
+assets/audio/theme.mp3 has no established licence and is pending replacement.

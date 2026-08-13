@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>chow.dev</title>
+<meta name="description" content="Hanish Chowdary — machine-learning engineer and researcher building AI systems end to end. Bangalore, India." />
+<meta property="og:title" content="chow.dev" />
+<meta property="og:image" content="assets/works/artemis.jpg" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fff'/%3E%3Ctext x='16' y='23' font-family='Helvetica,Arial' font-size='20' font-style='italic' text-anchor='middle' fill='%23000'%3Ec%3C/text%3E%3C/svg%3E" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="is-booting">
+
+<div class="backdrop" aria-hidden="true"></div>
+
+<div id="boot" class="boot" role="status" aria-label="Loading">
+  <canvas id="bootMark" class="boot__img" aria-hidden="true"></canvas>
+  <div class="boot__bar"><span id="bootFill"></span></div>
+  <div class="boot__pct" id="bootPct">000</div>
+</div>
+
+<div class="ctl">
+  <div class="switch">
+    <input type="checkbox" id="invertToggle" aria-label="Invert the page" />
+    <label for="invertToggle"><i></i></label>
+  </div>
+  <button class="ctl__b" id="soundToggle" aria-pressed="false">music on/off</button>
+</div>
+
+<main id="top">
+
+<!-- ============ 01 · FRONT ============ -->
+<section class="sec sec--dark hero" id="hero">
+  <div class="stage" data-rise>
+    <img src="assets/el/star-a.png" alt="" class="el el--star-a" aria-hidden="true" />
+    <img src="assets/el/star-b.png" alt="" class="el el--star-b" aria-hidden="true" />
+    <!-- the die is live; it keeps the cut-out's class, position and blending,
+         and feeds the tracker a real silhouette instead of the frozen one -->
+    <!-- The die is live. The wrapper is the cut-out — it carries the position,
+         the paper blending and the drift, exactly like the PNG did. The canvas
+         inside is inverted once on its own, because the scene is rendered the
+         way the die really looks (bright glass on black) and the page expects
+         dark artwork on white. -->
+    <div class="el el--dice" data-trk="dice" aria-hidden="true"><canvas id="diceCanvas"></canvas></div>
+    <h1 class="lay lay--shutter">chow</h1>
+    <p class="lay lay--kif" aria-hidden="true">.dev</p>
+  </div>
+  <a class="cue" href="#work" data-nav aria-label="Scroll to work"><i></i></a>
+</section>
+
+<!-- ============ 02 · WORK ============ -->
+<section class="sec sec--dark machine" id="work">
+  <div class="stage" aria-hidden="true">
+    <img src="assets/el/flower.png" alt="" class="el el--flower" />
+  </div>
+  <div class="machine__stage">
+    <canvas id="pspCanvas"></canvas>
+    <div class="machine__loading" id="pspLoading"><i class="spin" aria-hidden="true"></i></div>
+  </div>
+  <div class="rail" id="rail" aria-live="polite">
+    <b id="railIdx">01</b><i id="railTot">/09</i>
+    <a class="rail__open" id="railOpen" href="#" target="_blank" rel="noopener" aria-label="Open this post">↗</a>
+  </div>
+  <div class="keys" aria-hidden="true"><kbd>←</kbd><kbd>→</kbd><kbd>✕</kbd></div>
+</section>
+
+<!-- ============ 03 · ABOUT ============ -->
+<section class="sec sec--dark about" id="about">
+  <div class="stage">
+    <img src="assets/el/cd-a.png" alt="" class="el el--cd-a" aria-hidden="true" />
+    <img src="assets/el/cd-b.png" alt="" class="el el--cd-b" aria-hidden="true" />
+    <h2 class="lay lay--abouth">About me</h2>
+    <div class="lay lay--bio">
+      <p>I'm Hanish Chowdary — a machine-learning engineer and researcher in Bangalore, and a teenager with a camera roll full of concerts.</p>
+      <p>One half of that builds AI systems end to end, from the benchmark-validated model to the server it runs on, with a hard bias toward measured claims over assumed ones — every result checked against a benchmark, an audit, or a live run. The other half is everything on that screen: the front row, the stands, the coast going gold, the people I keep showing up for. This site is both on purpose. The one who audits his own model for bias and the one losing his voice in the third row aren't different people, and I've stopped filing them separately.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 · CONTACT ============ -->
+<section class="sec sec--dark contact" id="contact">
+  <div class="stage">
+    <img src="assets/el/cards.png" alt="" class="el el--cards" aria-hidden="true" />
+    <h2 class="lay lay--contact">contact</h2>
+    <p class="lay lay--me" aria-hidden="true">me.</p>
+    <div class="lay lay--icons">
+      <a class="ic ic--mail" href="mailto:hanishchowdary4@gmail.com" aria-label="Email hanishchowdary4@gmail.com">
+        <img src="assets/el/ic-mail.png" alt="" />
+      </a>
+      <a class="ic ic--ig" href="https://www.instagram.com/hanishchow/" target="_blank" rel="noopener" aria-label="Instagram @hanishchow">
+        <img src="assets/el/ic-ig.png" alt="" class="icons__ig" />
+      </a>
+      <a class="ic ic--gh" href="https://github.com/Hanishchow" target="_blank" rel="noopener" aria-label="GitHub @Hanishchow">
+        <img src="assets/el/ic-gh.svg" alt="" />
+      </a>
+      <a class="ic ic--li" href="https://www.linkedin.com/in/hanish-chowdary/" target="_blank" rel="noopener" aria-label="LinkedIn — Hanish Chowdary">
+        <img src="assets/el/ic-li.svg" alt="" />
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 · BUILDS ============ -->
+<section class="sec sec--dark builds" id="builds">
+  <canvas id="warpCanvas" aria-hidden="true"></canvas>
+  <div class="stage">
+    <h2 class="lay lay--buildsh">builds</h2>
+    <ol class="lay lay--builds">
+      <li>
+        <a class="build" href="https://github.com/Hanishchow/gecokkkkkkkkq" target="_blank" rel="noopener">
+          <b>GEOCK</b>
+          <span class="build__t"><i>Binding affinity from 2D fingerprints alone — R = 0.731 on CASF-2016, beating published 3D structure-based methods</i><u>Python · XGBoost · RDKit — 2026</u></span>
+        </a>
+        <a class="star" data-repo="Hanishchow/gecokkkkkkkkq" href="https://github.com/Hanishchow/gecokkkkkkkkq/stargazers" target="_blank" rel="noopener" aria-label="Star GEOCK on GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.6 6.3 6.8.55-5.2 4.45 1.6 6.6L12 16.9 6.2 20.5l1.6-6.6-5.2-4.45 6.8-.55z"/></svg><em>star</em></a>
+      </li>
+      <li>
+        <a class="build" href="https://github.com/Hanishchow/neroai" target="_blank" rel="noopener">
+          <b>NERO</b>
+          <span class="build__t"><i>A dual-cortex agent with Hebbian plastic memory that persists across sessions — 8 GB, 4-bit, self-hosted</i><u>PyTorch · Qwen2.5 · Ollama — 2026</u></span>
+        </a>
+        <a class="star" data-repo="Hanishchow/neroai" href="https://github.com/Hanishchow/neroai/stargazers" target="_blank" rel="noopener" aria-label="Star NERO on GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.6 6.3 6.8.55-5.2 4.45 1.6 6.6L12 16.9 6.2 20.5l1.6-6.6-5.2-4.45 6.8-.55z"/></svg><em>star</em></a>
+      </li>
+      <li>
+        <a class="build" href="https://github.com/Hanishchow/avis" target="_blank" rel="noopener">
+          <b>AVIS</b>
+          <span class="build__t"><i>Bird identification over 128-band mel-spectrograms, with GDPR compliance built into the pipeline itself</i><u>TensorFlow · BirdNET · SciPy — 2025</u></span>
+        </a>
+        <a class="star" data-repo="Hanishchow/avis" href="https://github.com/Hanishchow/avis/stargazers" target="_blank" rel="noopener" aria-label="Star AVIS on GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.6 6.3 6.8.55-5.2 4.45 1.6 6.6L12 16.9 6.2 20.5l1.6-6.6-5.2-4.45 6.8-.55z"/></svg><em>star</em></a>
+      </li>
+      <li>
+        <a class="build" href="https://github.com/Hanishchow/crispr-multiplex-optimizer" target="_blank" rel="noopener">
+          <b>CRISPR</b>
+          <span class="build__t"><i>Optimises 10–50 simultaneous edits under delivery-vector capacity constraints</i><u>Python · OR-Tools · Streamlit — 2025</u></span>
+        </a>
+        <a class="star" data-repo="Hanishchow/crispr-multiplex-optimizer" href="https://github.com/Hanishchow/crispr-multiplex-optimizer/stargazers" target="_blank" rel="noopener" aria-label="Star CRISPR Multiplex Optimizer on GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.6 6.3 6.8.55-5.2 4.45 1.6 6.6L12 16.9 6.2 20.5l1.6-6.6-5.2-4.45 6.8-.55z"/></svg><em>star</em></a>
+      </li>
+      <li>
+        <a class="build" href="https://github.com/Hanishchow/cosmic-sync" target="_blank" rel="noopener">
+          <b>COSMIC SYNC</b>
+          <span class="build__t"><i>Gravitational N-body dynamics coupled to Kuramoto phase synchronisation, 15th-order Taylor integrator</i><u>Python · NumPy — 2025</u></span>
+        </a>
+        <a class="star" data-repo="Hanishchow/cosmic-sync" href="https://github.com/Hanishchow/cosmic-sync/stargazers" target="_blank" rel="noopener" aria-label="Star Cosmic Sync on GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.6 6.3 6.8.55-5.2 4.45 1.6 6.6L12 16.9 6.2 20.5l1.6-6.6-5.2-4.45 6.8-.55z"/></svg><em>star</em></a>
+      </li>
+      <li>
+        <a class="build" href="https://github.com/Hanishchow/print-kiosk-desktop" target="_blank" rel="noopener">
+          <b>PRINT KIOSK</b>
+          <span class="build__t"><i>Self-service kiosk that actually prints — QR upload, UPI, real device control down to the win32 DC</i><u>Python · win32 · PyInstaller — 2026</u></span>
+        </a>
+        <a class="star" data-repo="Hanishchow/print-kiosk-desktop" href="https://github.com/Hanishchow/print-kiosk-desktop/stargazers" target="_blank" rel="noopener" aria-label="Star Print Kiosk on GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.6 6.3 6.8.55-5.2 4.45 1.6 6.6L12 16.9 6.2 20.5l1.6-6.6-5.2-4.45 6.8-.55z"/></svg><em>star</em></a>
+      </li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<!-- preload=auto, not none: the track is set rolling muted from the first frame,
+     so it is buffered and ready to be unmuted the instant the visitor clicks -->
+<audio id="bgAudio" src="assets/audio/theme.mp3" loop preload="auto" playsinline></audio>
+
+<script type="importmap">
+{ "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.1/examples/jsm/"
+} }
+</script>
+<script src="js/data.js"></script>
+<script src="js/contours.js"></script>
+<script src="js/main.js"></script>
+<script src="js/track.js"></script>
+<script src="js/stars.js" defer></script>
+<script type="module" src="js/psp.js"></script>
+<script type="module" src="js/warp.js"></script>
+<script type="module" src="js/dice.js"></script>
+</body>
+</html>

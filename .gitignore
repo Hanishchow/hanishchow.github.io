@@ -1,0 +1,15 @@
+# Source footage. Never committed — these are hundreds of megabytes of camera
+# originals, and git keeps every version of a binary forever.
+_incoming/
+
+# Build intermediates. The scripts in _build/ ARE committed; their output is
+# not. psp.orig.glb / psp.backup.glb alone are 12 MB each, and committing an
+# asset you later re-encode leaves both copies in history permanently.
+_build/*.glb
+_build/.tex/
+_build/.tmp/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
