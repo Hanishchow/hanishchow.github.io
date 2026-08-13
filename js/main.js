@@ -225,7 +225,16 @@
   var soundOnByDefault = true;
   try { if (sessionStorage.getItem('cd_sound') === '0') soundOnByDefault = false; } catch (e) {}
 
-  if (audio && soundOnByDefault) {
+  /* A phone on a venue's network should not spend 3.4 MB on a track nobody
+     asked for. On a narrow screen, or when the visitor has asked for reduced
+     data, the audio stays unfetched until the music control is pressed — at
+     which point it loads and plays like any other on-demand media. Desktop
+     keeps the original behaviour: roll it muted from the first frame so the
+     unmute is instant. */
+  var lightAudio = innerWidth < 820 ||
+    (navigator.connection && navigator.connection.saveData === true);
+
+  if (audio && soundOnByDefault && !lightAudio) {
     wanted = true;
     reflect();
     goAudible().then(function (ok) {
@@ -233,6 +242,11 @@
       rollSilently();          // otherwise roll it muted and wait for a gesture
       arm();
     });
+  } else if (audio && lightAudio) {
+    /* the control still reads "off" and still works; it just costs nothing
+       until it is used */
+    wanted = false;
+    reflect();
   }
 
   /* ---------------------------------------------------------- */

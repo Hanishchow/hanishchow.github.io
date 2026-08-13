@@ -229,13 +229,23 @@ function init() {
     bloom.strength = on ? 0.0 : 0.42;
   };
 
+  /* Two builds of the same console, identical geometry, different texture
+     sizes. On a 375px screen the 2048 maps resolve to well under one texel per
+     pixel of anything visible, so the full build is 1.3 MB spent on detail the
+     panel cannot show. Chosen once, at load, from the viewport — not from a
+     user-agent string. */
+  const MODEL = (innerWidth < 820 ||
+                 (navigator.connection && navigator.connection.saveData === true))
+    ? 'assets/models/psp.mobile.glb'
+    : 'assets/models/psp.glb';
+
   new GLTFLoader().load(
-    'assets/models/psp.glb',
+    MODEL,
     (gltf) => { setup(gltf.scene); },
     undefined,
     (err) => {
       console.error('[psp] model failed', err);
-      if (loadingEl) loadingEl.textContent = 'HARDWARE UNAVAILABLE — assets/models/psp.glb did not load';
+      if (loadingEl) loadingEl.textContent = 'HARDWARE UNAVAILABLE — ' + MODEL + ' did not load';
       CD.fireReady();
     }
   );
@@ -655,6 +665,12 @@ function init() {
 
     if (!w.vid || reduce) { prefetchNeighbours(); return; }
 
+    /* Nothing on this page is worth spending video bandwidth on until the
+       machine is actually on screen. The poster above is already drawn, so the
+       slot looks finished; the clip is fetched the moment the section arrives
+       (see the observer below, which re-selects). */
+    if (!seenOnce) return;
+
     const v = await getVideo(w.vid);
     if (token !== selectToken || !v) { prefetchNeighbours(); return; }
     try { v.currentTime = 0; } catch (e) {}
@@ -666,10 +682,19 @@ function init() {
 
   let selectToken = 0;
 
+  /* Set the first time the machine reaches the viewport. Declared here, before
+     anything that reads it, because select() runs during boot — long before
+     the observer further down has been created. */
+  let seenOnce = false;
+
   /* warm the two slots either side once the machine is idle, so a d-pad press
      lands on a clip that is already buffered */
   let prefetched = false;
   function prefetchNeighbours() {
+    /* Neighbours are a convenience for someone already browsing the archive.
+       Fetching them while the visitor is still on the front page cost two
+       whole clips before they had scrolled a pixel. */
+    if (!seenOnce) return;
     const run = () => {
       [current + 1, current - 1].forEach((i) => {
         const w = WORKS[((i % WORKS.length) + WORKS.length) % WORKS.length];
@@ -855,10 +880,34 @@ function init() {
   window.addEventListener('resize', resize, { passive: true });
   resize();
 
+  /* Releasing the deferred video must NOT depend on IntersectionObserver
+     alone. It is absent on old browsers, and its callbacks are suppressed
+     outright while a tab is hidden — in which case `seenOnce` would never
+     flip and the machine would sit on a frozen poster forever. This is a
+     plain geometry check on scroll: no API dependency, unregisters itself the
+     moment it has done its one job. */
+  function considerSeen() {
+    if (seenOnce) return;
+    const el = section || canvas;
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    if (r.top < innerHeight && r.bottom > 0) {
+      seenOnce = true;
+      removeEventListener('scroll', considerSeen);
+      select(current, true);
+    }
+  }
+  addEventListener('scroll', considerSeen, { passive: true });
+  considerSeen();
+
   let inView = true;
   if ('IntersectionObserver' in window) {
     new IntersectionObserver((es) => {
       inView = es[0].isIntersecting;
+      /* First arrival: this is the moment video is worth paying for. Re-select
+         the current slot so it loads its clip, and release the neighbour
+         prefetch that has been held back until now. */
+      if (inView && !seenOnce) { seenOnce = true; select(current, true); }
       /* a reel that nobody can see should not be decoding */
       if (live) { if (inView) { const p = live.play(); if (p && p.catch) p.catch(() => {}); } else live.pause(); }
     }, { threshold: 0.01 }).observe(section || canvas);

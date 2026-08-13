@@ -156,9 +156,12 @@
 
 </main>
 
-<!-- preload=auto, not none: the track is set rolling muted from the first frame,
-     so it is buffered and ready to be unmuted the instant the visitor clicks -->
-<audio id="bgAudio" src="assets/audio/theme.mp3" loop preload="auto" playsinline></audio>
+<!-- preload=none, and main.js decides. The track is 3.4 MB — on a phone tapped
+     from an NFC card at an event that is most of the page weight, spent before
+     a single word is read, on something the visitor has not asked to hear.
+     Desktop still warms it early (see main.js); narrow screens and save-data
+     wait until the visitor actually turns music on. -->
+<audio id="bgAudio" src="assets/audio/theme.mp3" loop preload="none" playsinline></audio>
 
 <script type="importmap">
 { "imports": {
