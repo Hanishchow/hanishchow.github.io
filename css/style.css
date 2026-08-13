@@ -254,8 +254,13 @@ body.is-invert .boot{--el-inv:1}
    on-white the paper system feeds on, and the wrapper's invert(--el-inv) then
    does the usual job in both polarities. */
 #diceCanvas{width:100%;height:100%;display:block;filter:invert(1)}
-.lay--shutter{left:28.33%;top:43.0%;font-size:4cqw;font-style:italic}
-.lay--kif    {left:59.84%;top:43.0%;font-size:4cqw;font-style:italic}
+/* Positioned off the GAP to the die, not off the stage centre. The two words
+   are different widths (chow is ~9% of the stage, .dev ~7.2%), so centring the
+   pair as a group leaves visibly uneven air either side of the die. Equal gaps
+   read as balanced even though the block is not symmetric. Both sit 1.8% clear
+   of the die's box, which spans 41.23%–58.78%. */
+.lay--shutter{left:30.41%;top:43.0%;font-size:4cqw;font-style:italic}
+.lay--kif    {left:60.58%;top:43.0%;font-size:4cqw;font-style:italic}
 
 .cue{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:6;padding:.6rem}
 .cue i{display:block;width:1px;height:34px;background:currentColor;opacity:.3;position:relative;overflow:hidden}
@@ -322,13 +327,33 @@ kbd{font-family:var(--f-vcr);font-size:.8rem;border:1px solid currentColor;opaci
 .el--cd-a  {left:-5.99%;top:-23.61%;width:41.35%}
 .el--cd-b  {left:82.08%;top:45.83%;width:29.90%}
 .lay--abouth{left:50%;top:26%;transform:translate(-50%,var(--ty,0));font-family:var(--f-vcr);font-size:3.3cqw;letter-spacing:.06em}
+/* The copy grew when it was rewritten in the owner's own voice; the column
+   keeps its width and its justified shape (that narrow block IS the layout),
+   so the type size absorbs the extra lines instead. Starts a little higher to
+   buy back headroom under the heading. `.sec` clips at overflow:hidden, so
+   anything that does not fit here is silently cut, not scrolled. */
 .lay--bio{
-  left:50%;top:38%;width:44%;margin-left:-22%;
-  font-size:1.78cqw;line-height:1.3;letter-spacing:0;
+  left:50%;top:36%;width:44%;margin-left:-22%;
+  /* Sized against BOTH axes. In cqw alone the type grows with the stage's
+     width while the height available to it does not, so a wide-and-short
+     window (a laptop, a half-height browser) silently clipped the last lines.
+     Taking the smaller of the two makes the copy shrink when the room does. */
+  font-size:min(1.34cqw, 2.28cqh);line-height:1.34;letter-spacing:0;
   text-align:justify;text-justify:inter-word;hyphens:auto;
 }
 .lay--bio p{margin:0}
 .lay--bio p+p{margin-top:.15em}
+/* The one line that gets to shout. It switches to VCR — the face the machine
+   speaks in everywhere else on this site — rather than a weight or a colour
+   invented for it, so the emphasis belongs to the same system as the counter,
+   the key hints and the boot percentage. VCR sets large for its point size, so
+   it is stepped down to sit on the same baseline as the prose around it. */
+.bio__hit{
+  font-family:var(--f-vcr);font-weight:400;font-style:normal;
+  font-size:.82em;letter-spacing:.06em;
+  padding:0 .18em;
+  box-shadow:inset 0 -0.34em 0 rgba(128,128,128,.28);
+}
 
 /* ---- 04 contact ---- */
 /* Bottom-aligned, not centred: the comp puts the mail and Instagram marks at

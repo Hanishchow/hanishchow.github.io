@@ -9,7 +9,10 @@
 <meta property="og:image" content="assets/works/artemis.jpg" />
 <meta name="theme-color" content="#ffffff" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fff'/%3E%3Ctext x='16' y='23' font-family='Helvetica,Arial' font-size='20' font-style='italic' text-anchor='middle' fill='%23000'%3Ec%3C/text%3E%3C/svg%3E" />
-<link rel="stylesheet" href="css/style.css" />
+<!-- ?v= is the cache key. There is no build step to hash filenames, so bump
+     this whenever the stylesheet changes or returning visitors keep the old
+     one until their browser feels like revalidating. -->
+<link rel="stylesheet" href="css/style.css?v=4" />
 </head>
 <body class="is-booting">
 
@@ -36,8 +39,6 @@
   <div class="stage" data-rise>
     <img src="assets/el/star-a.png" alt="" class="el el--star-a" aria-hidden="true" />
     <img src="assets/el/star-b.png" alt="" class="el el--star-b" aria-hidden="true" />
-    <!-- the die is live; it keeps the cut-out's class, position and blending,
-         and feeds the tracker a real silhouette instead of the frozen one -->
     <!-- The die is live. The wrapper is the cut-out — it carries the position,
          the paper blending and the drift, exactly like the PNG did. The canvas
          inside is inverted once on its own, because the scene is rendered the
@@ -73,8 +74,9 @@
     <img src="assets/el/cd-b.png" alt="" class="el el--cd-b" aria-hidden="true" />
     <h2 class="lay lay--abouth">About me</h2>
     <div class="lay lay--bio">
-      <p>I'm Hanish Chowdary — a machine-learning engineer and researcher in Bangalore, and a teenager with a camera roll full of concerts.</p>
-      <p>One half of that builds AI systems end to end, from the benchmark-validated model to the server it runs on, with a hard bias toward measured claims over assumed ones — every result checked against a benchmark, an audit, or a live run. The other half is everything on that screen: the front row, the stands, the coast going gold, the people I keep showing up for. This site is both on purpose. The one who audits his own model for bias and the one losing his voice in the third row aren't different people, and I've stopped filing them separately.</p>
+      <p>Ciao. If you're already here you know the name — Hanish Chowdary. If you don't: I take knowledge in like a black hole and put work back out like a white one.</p>
+      <p>Machine learning, interfaces, research — I'll take any of it. Binding affinity off 2D fingerprints that beat the 3D methods, an agent whose memory survives being switched off, annotation infrastructure a dermatologist actually uses. I've lined up on one track and won a different race, and I still couldn't tell you how much was luck and how much was refusing to stop. The one thing I'm sure of is <b class="bio__hit">I get shit done</b>.</p>
+      <p>Rest of the time I'm a teenager somewhere in a crowd, usually the third row, usually too loud — that screen up there is that half. First prize at an international conference, AIR 30, a national silver. That isn't a list of what I've done, it's what happens when somebody puts a path in front of me. So: ready to work together?</p>
     </div>
   </div>
 </section>
