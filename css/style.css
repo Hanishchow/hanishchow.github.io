@@ -402,6 +402,12 @@ kbd{font-family:var(--f-vcr);font-size:.8rem;border:1px solid currentColor;opaci
 }
 .lay--buildsh{left:50%;top:13%;transform:translate(-50%,var(--ty,0));
               font-family:var(--f-vcr);font-size:3.3cqw;letter-spacing:.06em}
+/* The heading is replaced by a dot matrix at runtime (js/scatter.js). Height
+   is set in em so it still scales off the font-size above and the layout is
+   unchanged whether the script runs or not. overflow:visible matters: dots
+   throw themselves well outside the type's own box, and an SVG clips to its
+   viewBox by default — without this the scatter would be sliced off. */
+.lay--buildsh svg{display:block;height:1.05em;width:auto;overflow:visible}
 .lay--builds{left:50%;top:25%;width:58%;margin-left:-29%;
              list-style:none;padding:0;font-size:1.22cqw}
 .lay--builds li{display:flex;align-items:flex-start;gap:1.2em}

@@ -12,7 +12,7 @@
 <!-- ?v= is the cache key. There is no build step to hash filenames, so bump
      this whenever the stylesheet changes or returning visitors keep the old
      one until their browser feels like revalidating. -->
-<link rel="stylesheet" href="css/style.css?v=4" />
+<link rel="stylesheet" href="css/style.css?v=5" />
 </head>
 <body class="is-booting">
 
@@ -108,7 +108,7 @@
 <section class="sec sec--dark builds" id="builds">
   <canvas id="warpCanvas" aria-hidden="true"></canvas>
   <div class="stage">
-    <h2 class="lay lay--buildsh">builds</h2>
+    <h2 class="lay lay--buildsh" data-scatter="builds">builds</h2>
     <ol class="lay lay--builds">
       <li>
         <a class="build" href="https://github.com/Hanishchow/gecokkkkkkkkq" target="_blank" rel="noopener">
@@ -176,6 +176,7 @@
 <script src="js/main.js"></script>
 <script src="js/track.js"></script>
 <script src="js/stars.js" defer></script>
+<script src="js/scatter.js" defer></script>
 <script type="module" src="js/psp.js"></script>
 <script type="module" src="js/warp.js"></script>
 <script type="module" src="js/dice.js"></script>
