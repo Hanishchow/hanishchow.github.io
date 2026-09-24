@@ -53,6 +53,13 @@ img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 ::selection{background:currentColor;color:var(--light)}
 :focus-visible{outline:2px solid currentColor;outline-offset:4px}
+/* Read, never drawn. The hero heading is the `chow` wordmark; the full name
+   rides inside it for search engines and screen readers without touching the
+   artwork. It sits inside an absolutely placed .lay, so it must not take part
+   in the word's width — that is what keeps `chow` butted against the centre
+   line on phones. Nothing else targets it, so nothing outranks it. */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+         clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
 /* A single fixed backdrop behind everything has its tone interpolated on
    scroll, so where two sections differ the tones bleed instead of meeting at a
@@ -387,6 +394,20 @@ kbd{font-family:var(--f-vcr);font-size:.8rem;border:1px solid currentColor;opaci
    `.icons__ig` (0,1,0) did. Qualifying it with the row and the element takes
    it to 0,2,1, and being unconditional it covers is-invert too. */
 .lay--icons img.icons__ig{filter:none}
+/* Who the owner is off this page. Machine text, so VCR like the counter and
+   the key hints, in the page's own ink. It lives in the one clear band of the
+   comp: the card artwork bottoms out near 77% of the stage and the icon row
+   starts at 89.7%, so 83% leaves air both sides at any window. Centred with
+   auto margins rather than translate(-50%) because the tracker punches the
+   type out by offsetLeft/offsetWidth and ignores the transform — this way its
+   keep-out box is where the words really are. */
+.lay--ident{left:0;right:0;width:max-content;margin:0 auto;top:83%;
+            font-family:var(--f-vcr);font-size:.95cqw;letter-spacing:.05em;white-space:nowrap}
+/* the same hairline sweep as the builds rows and the fixed controls */
+.lay--ident a{position:relative}
+.lay--ident a::after{content:'';position:absolute;left:0;right:100%;bottom:-.3em;
+  height:1px;background:currentColor;opacity:.55;transition:right .45s var(--ease)}
+.lay--ident a:hover::after,.lay--ident a:focus-visible::after{right:0}
 
 /* ---- 05 builds ---- */
 .builds{height:100svh;display:grid;place-items:center}
@@ -548,6 +569,13 @@ kbd{font-family:var(--f-vcr);font-size:.8rem;border:1px solid currentColor;opaci
               transform:translateY(var(--ty,0))}
   .ic--mail{width:12cqw}
   .ic--ig,.ic--gh,.ic--li{width:9.8cqw}
+  /* The desktop band does not exist here: `me.` ends ~28px above the icon row
+     and the fixed controls sit just under it. The clear air on a phone is
+     between `contact` and the top of the card artwork (~38%), so the line
+     trails the heading — offset by the heading's own size in cqw (12cqw type,
+     line-height 1, plus a gap wide enough to absorb the two drift rates) so it
+     can never land on the word whatever the phone's aspect. */
+  .lay--ident{top:calc(15cqh + 17cqw);font-size:3.2cqw}
 
   /* 05 builds — the rows stack instead of sitting on one baseline; a 26%
      name column at phone widths would wrap every title. */
@@ -577,7 +605,7 @@ kbd{font-family:var(--f-vcr);font-size:.8rem;border:1px solid currentColor;opaci
   .el.rev,.el.rev.is-shown{opacity:1;filter:invert(var(--el-inv));transition:none}
   .el,.lay{--ty:0 !important}
   [data-rise]{opacity:1;transform:none;filter:none;transition:none}
-  .lay--icons img,.rail__open,.ctl__b::after,.lay--builds a::after{transition:none}
+  .lay--icons img,.rail__open,.ctl__b::after,.lay--builds a::after,.lay--ident a::after{transition:none}
   /* the funnel stops turning on its own — warp.js holds uTime, so it still
      answers the scroll but never moves by itself */
 }

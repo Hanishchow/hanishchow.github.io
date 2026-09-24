@@ -286,7 +286,7 @@
     'el--cd-a': 0.15, 'el--cd-b': -0.12, 'el--cards': 0.08,
     'lay--shutter': -0.05, 'lay--kif': 0.05,
     'lay--abouth': -0.04, 'lay--bio': 0.035,
-    'lay--contact': -0.05, 'lay--me': 0.05, 'lay--icons': 0.03,
+    'lay--contact': -0.05, 'lay--me': 0.05, 'lay--icons': 0.03, 'lay--ident': 0.03,
     'lay--buildsh': -0.04, 'lay--builds': 0.03
   };
   movers.forEach(function (m) {
