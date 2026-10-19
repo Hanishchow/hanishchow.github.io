@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://hanishchow.github.io/sitemap.xml
+Sitemap: https://hanishchow.github.io/JellyTech/sitemap.xml
