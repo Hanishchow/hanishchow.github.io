@@ -1,0 +1,26 @@
+# Hanish Chowdary N (Hanishchow)
+
+> Hanish Chowdary N, also written N Hanish, Hanish Chowdary, Hanishchow or hanishchowdary, is a machine-learning engineer and researcher in Bengaluru, India, and a second-year B.Tech Biotechnology student at Acharya Institute of Technology. This site is his portfolio.
+
+## Links
+
+- [Portfolio](https://hanishchow.github.io/): projects, about, contact.
+- [GitHub](https://github.com/Hanishchow): source for every project below.
+- [LinkedIn](https://www.linkedin.com/in/hanish-chowdary/)
+- [ORCID](https://orcid.org/0009-0002-9017-4436)
+- [CityShield](https://cityshield.live): Bengaluru emergency-response platform; Hanish co-founded it with Shreyas Jayanna.
+- [Celure AI](https://celure.net): linked from the contact area of the portfolio.
+
+## Projects
+
+- [GEOCK](https://github.com/Hanishchow/geock-docking-research): binding affinity from 2D fingerprints alone; R = 0.731 on CASF-2016 (Python, XGBoost, RDKit, 2026).
+- [NERO](https://github.com/Hanishchow/neroai): dual-cortex agent with Hebbian plastic memory that persists across sessions, 8 GB and 4-bit, self-hosted (PyTorch, Qwen2.5, Ollama, 2026).
+- [AVIS](https://github.com/Hanishchow/avis): bird identification over 128-band mel-spectrograms with GDPR compliance in the pipeline (TensorFlow, BirdNET, SciPy, 2025).
+- [CRISPR multiplex optimizer](https://github.com/Hanishchow/crispr-multiplex-optimizer): optimises 10-50 simultaneous edits under delivery-vector capacity constraints (Python, OR-Tools, Streamlit, 2025).
+- [Cosmic Sync](https://github.com/Hanishchow/cosmic-sync): gravitational N-body dynamics coupled to Kuramoto phase synchronisation (Python, NumPy, 2025).
+- [Print Kiosk](https://github.com/Hanishchow/print-kiosk-desktop): self-service kiosk that prints; QR upload, UPI, win32 device control (Python, win32, PyInstaller, 2026).
+
+## Facts
+
+- Award: All India Rank 30, All India General Knowledge Examination (Centre for Human Resource Development, Bengaluru), 2018.
+- Contact: hanishchowdary4@gmail.com
